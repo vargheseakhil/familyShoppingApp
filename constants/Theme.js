@@ -1,0 +1,27 @@
+export default {
+  COLORS: {
+    DEFAULT: '#DCDCDC',
+    PRIMARY: '#86C536',
+    LABEL: '#86C536',
+    INFO: '#00BCD4',
+    ERROR: '#F44336',
+    SUCCESS: '#4CAF50',
+    WARNING: '#FF9800',
+    MUTED: '#979797',
+    INPUT: '#DCDCDC',
+    ACTIVE: '#86C536',
+    BUTTON_COLOR: '#86C536',
+    PLACEHOLDER: '#9FA5AA',
+    SWITCH_ON: '#86C536',
+    SWITCH_OFF: '#D4D9DD',
+    GRADIENT_START: '#32CD32',
+    GRADIENT_END: '#7CFC00',
+    PRICE_COLOR: '#EAD5FB',
+    BORDER_COLOR: '#E7E7E7',
+    BLOCK: '#E7E7E7',
+    ICON: '#4A4A4A',
+  },
+  SIZES: {
+    BLOCK_SHADOW_RADIUS: 2,
+  }
+};
