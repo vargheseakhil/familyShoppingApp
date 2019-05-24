@@ -37,7 +37,7 @@ const Drawer = (props) => (
 
 const profile = {
   avatar: Images.Profile,
-  name: 'Jhon Fernadez',
+  name: 'John Fernadez',
   type: 'Seller',
   plan: 'Pro',
   rating: 4.8

@@ -1,13 +1,20 @@
 import React from 'react';
-import { StyleSheet, Dimensions, ScrollView } from 'react-native';
+import { StyleSheet, Dimensions, ScrollView, Alert, ActivityIndicator } from 'react-native';
+import { withNavigation } from 'react-navigation';
 import { Button, Block, Text, Input, theme } from 'galio-framework';
-
 import { Icon, Product } from '../components/';
-
 const { width } = Dimensions.get('screen');
 import products from '../constants/products';
 
-export default class Home extends React.Component {
+class Home extends React.Component {
+    state = {
+      loader: false,
+      camera: false,
+      man: true,
+      woman: false,
+      kid: false,
+    }
+
   renderSearch = () => {
     const { navigation } = this.props;
     const iconCamera = <Icon size={16} color={theme.COLORS.MUTED} name="camera-18" family="GalioExtra" />
@@ -46,11 +53,8 @@ export default class Home extends React.Component {
   }
 
   renderProducts = () => {
-    return (
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={styles.products}>
-        <Block flex>
+    const manProducts = () => (
+      <Block flex>
           <Product product={products[0]} horizontal />
           <Block flex row>
             <Product product={products[1]} style={{ marginRight: theme.SIZES.BASE }} />
@@ -59,38 +63,108 @@ export default class Home extends React.Component {
           <Product product={products[3]} horizontal />
           <Product product={products[4]} full />
         </Block>
+    )
+    const womanProducts = () => (
+      <Block flex>
+          <Product product={products[5]} horizontal />
+          <Block flex row>
+            <Product product={products[6]} style={{ marginRight: theme.SIZES.BASE }} />
+            <Product product={products[7]} />
+          </Block>
+          <Product product={products[8]} horizontal />
+          <Product product={products[9]} full />
+        </Block>
+    )
+    return (
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.products}>
+        {this.state.man? manProducts(): womanProducts()}
       </ScrollView>
     )
   }
+  renderLadiesProducts = () => {
+    return (
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.products}>
+        <Block flex>
+          <Product product={products[5]} horizontal />
+          <Block flex row>
+            <Product product={products[6]} style={{ marginRight: theme.SIZES.BASE }} />
+            <Product product={products[7]} />
+          </Block>
+          <Product product={products[8]} horizontal />
+          <Product product={products[9]} full />
+        </Block>
+      </ScrollView>
+    )
+  }
+  renderLoader = () => {
+    return (
+      <Block flex style={styles.loader}>
+      <Text>
+        Fetching details for the image captured
+      </Text>
+       <ActivityIndicator size="large" animating style={styles.loader} />
+      </Block>
+    )
+  }
+
+  componentDidMount(){
+    const { navigation } = this.props;
+    // alert('Family Shopping App would like access the camera');
+    Alert.alert(
+      'Allow "Family Shopping App" to access your camera while you are using the app',
+      'Captured images will only be used for customising the pages and viewed items',
+      [
+        {
+          text: 'Cancel',
+          onPress: () => console.log('Allowed'),
+          style: 'cancel',
+        },
+        {
+          text: 'Allow',
+          onPress: () => setDataFetching() ,
+        },
+      ],
+    );
+   setDataFetching = () => {
+    setInterval( () => {
+      this.setState({loader: true})
+      setTimeout(() => {
+       this.setState({loader: false, man: !this.state.man})
+      }, 3000)
+    }, 10000);
+   }
+   
+  }
+
+  componentWillUnmount() {
+    clearInterval()
+    this.setState({loader : false})
+  }
 
   render() {
-    // const test = AlertIOS.alert(
-    //   'Update available',
-    //   'Keep your app up to date to enjoy the latest features',
-    //   [
-    //     {
-    //       text: 'Cancel',
-    //       onPress: () => console.log('Cancel Pressed'),
-    //       style: 'cancel',
-    //     },
-    //     {
-    //       text: 'Install',
-    //       onPress: () => console.log('Install Pressed'),
-    //     },
-    //   ],
-    // );
+    const { navigation } = this.props;
     return (
       <Block flex center style={styles.home}>
-      {/* {test} */}
-        {this.renderProducts()}
+        {this.state.loader ? this.renderLoader() : 
+          this.renderProducts()}
       </Block>
     );
+      
+    
   }
 }
+export default withNavigation(Home)
 
 const styles = StyleSheet.create({
   home: {
     width: width,    
+  },
+  loader: {
+    marginTop: 50,
   },
   search: {
     height: 48,

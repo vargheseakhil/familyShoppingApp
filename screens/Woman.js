@@ -56,7 +56,7 @@ export default class Woman extends React.Component {
           <Product product={products[7]} horizontal />
           <Block flex row>
             <Product product={products[9]} style={{ marginRight: theme.SIZES.BASE }} />
-            <Product product={products[10]} />
+            <Product product={products[5]} />
           </Block>
         </Block>
       </ScrollView>
