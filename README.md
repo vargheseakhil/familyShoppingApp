@@ -2,6 +2,8 @@
 ECom app for an account with customised screens and Funtionality for family members
 
 # Steps to start
+npm install -g expo-cli
+npm install
 npm start
 
 # Running your Family Shop application

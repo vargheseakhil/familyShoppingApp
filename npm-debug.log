@@ -1,0 +1,47 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/vn0i0xx/.nvm/versions/node/v6.9.1/bin/node',
+1 verbose cli   '/Users/vn0i0xx/.nvm/versions/node/v6.9.1/bin/npm',
+1 verbose cli   'start' ]
+2 info using npm@3.10.8
+3 info using node@v6.9.1
+4 verbose run-script [ 'prestart', 'start', 'poststart' ]
+5 info lifecycle rn-material-kit-free@~prestart: rn-material-kit-free@
+6 silly lifecycle rn-material-kit-free@~prestart: no script for prestart, continuing
+7 info lifecycle rn-material-kit-free@~start: rn-material-kit-free@
+8 verbose lifecycle rn-material-kit-free@~start: unsafe-perm in lifecycle true
+9 verbose lifecycle rn-material-kit-free@~start: PATH: /Users/vn0i0xx/.nvm/versions/node/v6.9.1/lib/node_modules/npm/bin/node-gyp-bin:/Users/vn0i0xx/familyShoppingApp/node_modules/.bin:/Users/vn0i0xx/.nvm/versions/node/v6.9.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/vn0i0xx/ATG_Setup/apache-ant-1.9.3/bin
+10 verbose lifecycle rn-material-kit-free@~start: CWD: /Users/vn0i0xx/familyShoppingApp
+11 silly lifecycle rn-material-kit-free@~start: Args: [ '-c', 'cross-env REACT_EDITOR=code expo start' ]
+12 silly lifecycle rn-material-kit-free@~start: Returned: code: 1  signal: null
+13 info lifecycle rn-material-kit-free@~start: Failed to exec start script
+14 verbose stack Error: rn-material-kit-free@ start: `cross-env REACT_EDITOR=code expo start`
+14 verbose stack Exit status 1
+14 verbose stack     at EventEmitter.<anonymous> (/Users/vn0i0xx/.nvm/versions/node/v6.9.1/lib/node_modules/npm/lib/utils/lifecycle.js:255:16)
+14 verbose stack     at emitTwo (events.js:106:13)
+14 verbose stack     at EventEmitter.emit (events.js:191:7)
+14 verbose stack     at ChildProcess.<anonymous> (/Users/vn0i0xx/.nvm/versions/node/v6.9.1/lib/node_modules/npm/lib/utils/spawn.js:40:14)
+14 verbose stack     at emitTwo (events.js:106:13)
+14 verbose stack     at ChildProcess.emit (events.js:191:7)
+14 verbose stack     at maybeClose (internal/child_process.js:877:16)
+14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
+15 verbose pkgid rn-material-kit-free@
+16 verbose cwd /Users/vn0i0xx/familyShoppingApp
+17 error Darwin 18.6.0
+18 error argv "/Users/vn0i0xx/.nvm/versions/node/v6.9.1/bin/node" "/Users/vn0i0xx/.nvm/versions/node/v6.9.1/bin/npm" "start"
+19 error node v6.9.1
+20 error npm  v3.10.8
+21 error code ELIFECYCLE
+22 error rn-material-kit-free@ start: `cross-env REACT_EDITOR=code expo start`
+22 error Exit status 1
+23 error Failed at the rn-material-kit-free@ start script 'cross-env REACT_EDITOR=code expo start'.
+23 error Make sure you have the latest version of node.js and npm installed.
+23 error If you do, this is most likely a problem with the rn-material-kit-free package,
+23 error not with npm itself.
+23 error Tell the author that this fails on your system:
+23 error     cross-env REACT_EDITOR=code expo start
+23 error You can get information on how to open an issue for this project with:
+23 error     npm bugs rn-material-kit-free
+23 error Or if that isn't available, you can get their info via:
+23 error     npm owner ls rn-material-kit-free
+23 error There is likely additional logging output above.
+24 verbose exit [ 1, true ]
