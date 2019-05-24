@@ -68,7 +68,7 @@ const ProfileStack = createStackNavigator({
 
 const ComponentsStack = createStackNavigator({
   Components: {
-    screen: ComponentsScreen,
+    screen: ProScreen,
     navigationOptions: ({ navigation }) => ({
       header: <Header back title="Components" navigation={navigation} />,
     })
@@ -92,7 +92,7 @@ const HomeStack = createStackNavigator({
     })
   },
   Components: {
-    screen: ComponentsScreen,
+    screen: ProScreen,
     navigationOptions: ({navigation}) => ({
       header: <Header title="Components" navigation={navigation} />,
     })
@@ -125,7 +125,28 @@ const HomeStack = createStackNavigator({
   Pro: {
     screen: ProScreen,
     navigationOptions: ({navigation}) => ({
-      header: <Header back white transparent title="Pro" navigation={navigation} />,
+      header: <Header back white transparent title="Kids" navigation={navigation} />,
+      headerTransparent: true,
+    })
+  }, 
+  NewCollection: {
+    screen: ProScreen,
+    navigationOptions: ({navigation}) => ({
+      header: <Header back white transparent title="Kids" navigation={navigation} />,
+      headerTransparent: true,
+    })
+  },
+  SignIn: {
+    screen: ProScreen,
+    navigationOptions: ({navigation}) => ({
+      header: <Header back white transparent title="Kids" navigation={navigation} />,
+      headerTransparent: true,
+    })
+  },
+  SignUp: {
+    screen: ProScreen,
+    navigationOptions: ({navigation}) => ({
+      header: <Header back white transparent title="Kids" navigation={navigation} />,
       headerTransparent: true,
     })
   },
