@@ -7,10 +7,8 @@
  * Copyright 2019 Creative Tim (http://www.creative-tim.com)
  * Licensed under MIT (https://github.com/creativetimofficial/material-kit-react-native/blob/master/LICENSE)
  =========================================================
- * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
+cd  * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
-
 import React from 'react';
 import { Platform, StatusBar, Image } from 'react-native';
 import { AppLoading, Asset } from 'expo';
